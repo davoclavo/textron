@@ -2,7 +2,7 @@ defmodule Textron.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "rooms:*", Textron.RoomChannel
+  channel "file:*", Textron.FileChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
@@ -19,9 +19,7 @@ defmodule Textron.UserSocket do
   #
   # See `Phoenix.Token` documentation for examples in
   # performing token verification on connect.
-  def connect(_params, socket) do
-    {:ok, socket}
-  end
+  def connect(_params, socket), do: {:ok, socket}
 
   # Socket id's are topics that allow you to identify all sockets for a given user:
   #
